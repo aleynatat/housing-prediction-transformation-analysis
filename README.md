@@ -32,7 +32,7 @@ This project analyzes the California Housing dataset to predict median house val
 | **XGBoost** | Base (No Trans/Tuning) | 0.8297 | Solid baseline performance. |
 | **LightGBM** | Only Transformation | 0.8306 | Minimal gain over baseline. Transformation alone wasn't enough. |
 | **LightGBM** | Only Tuning (Raw Data) | 0.8409 | Significant improvement. Proved that optimization is crucial. |
-| **LightGBM** | **Tuning + Transformation** | **0.8444** 🏆 | **Best Performance.** Combining both techniques unlocked the highest accuracy. |
+| **LightGBM** | **Tuning + Transformation** | **0.8444**  | **Best Performance.** Combining both techniques unlocked the highest accuracy. |
 
 ### 5. Critical Finding
 
