@@ -25,13 +25,17 @@ This project analyzes the California Housing dataset to predict median house val
 * MAE (Mean Absolute Error)
 * R2 Score
 
-Key Results & Insights
-Model	Strategy	R2 Score	Insight
-XGBoost	Base (No Trans/Tuning)	0.8297	Solid baseline performance.
-LightGBM	Only Transformation	0.8306	Minimal gain over baseline. Transformation alone wasn't enough.
-LightGBM	Only Tuning (Raw Data)	0.8409	Significant improvement. Proved that optimization is crucial.
-LightGBM	Tuning + Transformation	0.8444 🏆	Best Performance. Combining both techniques unlocked the highest accuracy.
-Critical Finding
-The analysis revealed a synergistic effect between Feature Transformation and Hyperparameter Tuning. While Tuning alone provided a strong boost (R2: 0.8409), applying Power Transformations (Yeo-Johnson & Box-Cox) before tuning allowed the model to reach its peak performance (R2: 0.8444).
+### 4. Key Results & Insights
 
-This contradicts the initial hypothesis that tree-based models don't benefit from transformations. In this dataset, normalizing the distributions likely provided a smoother optimization surface, enabling RandomizedSearchCV to converge on a superior set of hyperparameters.
+| Model | Strategy | R2 Score | Insight |
+| :--- | :--- | :--- | :--- |
+| **XGBoost** | Base (No Trans/Tuning) | 0.8297 | Solid baseline performance. |
+| **LightGBM** | Only Transformation | 0.8306 | Minimal gain over baseline. Transformation alone wasn't enough. |
+| **LightGBM** | Only Tuning (Raw Data) | 0.8409 | Significant improvement. Proved that optimization is crucial. |
+| **LightGBM** | **Tuning + Transformation** | **0.8444** 🏆 | **Best Performance.** Combining both techniques unlocked the highest accuracy. |
+
+### 5. Critical Finding
+
+The analysis revealed a synergistic effect between **Feature Transformation** and **Hyperparameter Tuning**. While Tuning alone provided a strong boost (R2: 0.8409), applying **Power Transformations (Yeo-Johnson & Box-Cox)** before tuning allowed the model to reach its peak performance (**R2: 0.8444**).
+
+This contradicts the initial hypothesis that tree-based models don't benefit from transformations. In this dataset, normalizing the distributions likely provided a smoother optimization surface, enabling `RandomizedSearchCV` to converge on a superior set of hyperparameters.
